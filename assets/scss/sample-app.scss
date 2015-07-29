@@ -1,0 +1,28 @@
+//==========
+// Application Imports
+//==========
+
+// Bedrock
+@import "_bedrock/loader";
+
+// Dependencies
+@import "_sample-app/variables";
+@import "_sample-app/mixins";
+
+// Patterns
+@import "_sample-app/patterns/semantics";
+@import "_sample-app/patterns/headings";
+@import "_sample-app/patterns/lists";
+
+// Components
+@import "_sample-app/components/grid";
+@import "_sample-app/components/tables";
+
+// Modules
+@import "_sample-app/modules/navigation";
+
+// Templates
+// @import "_app/templates/X";
+
+// Pages
+// @import "_app/pages/X";

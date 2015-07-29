@@ -1,0 +1,56 @@
+//==========
+// Horizontal Menu
+//==========
+
+@mixin horizontal-menu($subs: true, $sub-subs: true) {
+	margin: 0;
+	@include list-inline;
+	
+	@if $subs {
+		.no-js & li:hover > ul,
+		.hover-enabled & li:hover > ul {
+			display: block;
+		}
+	}
+
+	li {
+		position: relative;
+		
+		a {
+			display: inline-block;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		ul {
+			display: none;
+			left: 0;
+			list-style-type: none;
+			margin: 0;
+			position: absolute;
+			top: 100%;
+		
+			li {
+				float: none;
+				margin: 0;
+				position: relative;
+				
+				@if $sub-subs {
+					.no-js &:hover > ul,
+					.hover-enabled &:hover > ul {
+						display: inline-block;
+					}
+				}
+
+				a {
+					
+				}
+
+				ul {
+					left: 100%;
+					top: 0;
+				}
+			}
+		}
+	}
+}

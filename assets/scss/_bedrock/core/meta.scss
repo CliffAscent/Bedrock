@@ -1,0 +1,49 @@
+//==========
+// Provide app data for JavaScript components.
+//==========
+meta.bedrock-namespace {
+	font-family: #{$namespace};
+}
+
+meta.#{$namespace}-version {
+	font-family: $version;
+}
+
+meta.#{$namespace}-breakpoints {
+	font-family: #{to-string($breakpoints)};
+}
+
+//==========
+// Provide media query values for JavaScript components.
+//
+// Forward slash placed around everything to convince PhantomJS to read the value.
+//==========
+meta.#{$namespace}-breakpoint-xsmall {
+	font-family: $xsmall-only;
+	width: lower-bound($xsmall-range);
+}
+
+meta.#{$namespace}-breakpoint-small {
+	font-family: $small-only;
+	width: lower-bound($small-range);
+}
+
+meta.#{$namespace}-breakpoint-medium {
+	font-family: $medium-only;
+	width: lower-bound($medium-range);
+}
+
+meta.#{$namespace}-breakpoint-large {
+	font-family: $large-only;
+	width: lower-bound($large-range);
+}
+
+meta.#{$namespace}-breakpoint-xlarge {
+	font-family: $xlarge-only;
+	width: lower-bound($xlarge-range);
+}
+
+meta.#{$namespace}-breakpoint-full {
+	font-family: $full-only;
+	width: lower-bound($full-range);
+}

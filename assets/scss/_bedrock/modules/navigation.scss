@@ -1,0 +1,34 @@
+//==========
+// Navigation
+//==========
+
+@mixin navigation($break: medium, $control: menu-control) {
+
+	.#{$control} {
+		cursor: pointer;
+
+		@include break($break) {
+			display: none;
+		}
+	}
+
+	& > ul {
+		@include vertical-menu();
+		
+		@if $control != false {
+			display: none;
+		}
+		
+		@include break($break) {
+			@include horizontal-menu();
+			display: block;
+		}
+	}
+
+	@if $control != false {
+		.no-js &:hover > ul,
+		.hover-enabled &:hover > ul {
+			display: block;
+		}
+	}
+}

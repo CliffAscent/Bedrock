@@ -1,0 +1,108 @@
+//==========
+// Grid System
+//
+// This styles component will generate the classes for a traditional grid system.
+// This styles components should only be used for testing and prototyping.
+// You should use @extend as necessary to create semantic grids.
+//==========
+
+// Grid rows
+.row {
+	@extend %row;
+	
+	&.collapse {
+		@extend %row-collapse;
+		
+		& > .column {
+			@extend %column-collapse;
+		}
+		.row {
+			@extend %row-nest-collapse;
+		}
+	}
+	&.collapse-outer {
+		@extend %row-nest;
+	}
+	.row {
+		@extend %row-nest;
+	}
+}
+
+// Grid columns core
+.column {
+	@extend %column;
+	
+	&.collapse {
+		@extend %column-collapse;
+	}
+}
+[class*="column"] + [class*="column"]:last-child,
+[class*="column"] + [class*="column"].last,
+[class*="column"] + [class*="column"].end  {
+	@extend %column-last;
+}
+
+// xsmall columns
+.column-center,
+.xsmall-center {
+	@extend %column-center;
+}
+.column-uncenter,
+.xsmall-uncenter {
+	@extend %column-uncenter;
+}
+@for $i from 1 through $column-count {
+	.column-#{$i},
+	.xsmall-#{$i} {
+		@extend %column-#{$i};
+	}
+}
+@for $i from 1 through ($column-count - 1) {
+	.offset-#{$i},
+	.column-offset-#{$i},
+	.xsmall-offset-#{$i} {
+		@extend %column-offset-#{$i};
+	}
+	.pull-#{$i},
+	.column-pull-#{$i},
+	.xsmall-pull-#{$i} {
+		@extend %column-pull-#{$i};
+	}
+	.push-#{$i},
+	.column-push-#{$i},
+	.xsmall-push-#{$i} {
+		@extend %column-push-#{$i};
+	}
+}
+
+// small and up columns
+@each $size in $breakpoints {
+	@if $size != xsmall {
+		.#{$size}-center {
+			@extend %#{$size}-center;
+		}
+		.#{$size}-uncenter {
+			@extend %#{$size}-uncenter;
+		}
+		@for $i from 1 through $column-count {
+			.#{$size}-#{$i} {
+				@extend %#{$size}-#{$i};
+			}
+		}
+		@for $i from 1 through ($column-count - 1) {
+			.#{$size}-offset-#{$i} {
+				@extend %#{$size}-offset-#{$i};
+			}
+		}
+		@for $i from 1 through ($column-count - 1) {
+			.#{$size}-pull-#{$i} {
+				@extend %#{$size}-pull-#{$i};
+			}
+		}
+		@for $i from 1 through ($column-count - 1) {
+			.#{$size}-push-#{$i} {
+				@extend %#{$size}-push-#{$i};
+			}
+		}
+	}
+}

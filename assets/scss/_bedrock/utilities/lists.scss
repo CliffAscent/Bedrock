@@ -1,0 +1,11 @@
+//==========
+// List Utilities
+//==========
+@mixin list-inline($li: li) {
+	@extend %clear-fix;
+	list-style-type: none;
+	
+	& > #{$li} {
+		float: left;
+	}
+}

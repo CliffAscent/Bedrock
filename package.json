@@ -1,0 +1,26 @@
+{
+	"name":    "Bedrock",
+	"version": "0.8.0",
+	"author":  "Patrick Clifford",
+	"private":  true,
+	
+	"devDependencies": {
+		"autoprefixer-core":       "latest",
+		"grunt":                   "latest",
+		"grunt-bower":             "latest",
+		"grunt-bower-task":        "latest",
+		"grunt-cli":               "latest",
+		"grunt-contrib-copy":      "latest",
+		"grunt-contrib-jshint":    "latest",
+		"grunt-contrib-less":      "latest",
+		"grunt-contrib-requirejs": "latest",
+		"grunt-contrib-uglify":    "latest",
+		"grunt-contrib-watch":     "latest",
+		"grunt-postcss":           "latest",
+		"grunt-replace":           "latest",
+		"grunt-sass":              "latest",
+		"node-sass":               "latest",
+		"requirejs":               "latest",
+		"time-grunt":              "latest"
+	}
+}

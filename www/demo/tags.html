@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML Tag Semantics</title>
+		<link href="../assets/css/sample-app.css" rel="stylesheet" />
+		<script data-main="../assets/js/sample-app" src="../assets/js/require.js"></script>
+	</head>
+	<body>
+		<h2>Headings</h2>
+		<p>
+			<h1>Heading 1 <a href="#">Linked</a></h1>
+			<h2>Heading 2 <a href="#">Linked</a></h2>
+			<h3>Heading 3 <a href="#">Linked</a></h3>
+			<h4>Heading 4 <a href="#">Linked</a></h4>
+			<h5>Heading 5 <a href="#">Linked</a></h5>
+			<h6>Heading 6 <a href="#">Linked</a></h6>
+		</p>
+
+		<h2>Paragraph</h2>
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+		<h2>Blockquotes</h2>
+		<blockquote>Blockquote Left</blockquote>
+		<blockquote class="right">Blockquote Right</blockquote>
+
+		<h2>Inline Quotes</h2>
+		<p><q>This is an inline quote wrapped in the q tag.</q></p>
+
+		<h2>Pre and Code Tags</h2>
+		<code>
+<pre>
+if ( typeof ascensionConfig != 'undefined' ) {
+	var Ascension = jQuery.Ascension( ascensionConfig );
+}
+else {
+	var Ascension = jQuery.Ascension();
+}
+</pre>
+		</code>
+
+		<h2>Links</h2>
+		<p>
+			<a href="#">Regular Link</a>
+		</p>
+
+		<h2>Emphasis</h2>
+		<p><em>The em tag is used to stress emphasis.</em></p>
+
+		<h2>Strong</h2>
+		<p><strong>The strong tag is used to signify importance.</strong></p>
+
+		<h2>Mark</h2>
+		<p>Use the <mark>mark tag</mark> or <span class="highlight">highlight class</span> to highlight text.</p>
+
+		<h2>Small</h2>
+		<p><small>Fine print text is wrapped with the small tag.</small></p>
+
+		<h2>Citation</h2>
+		<p><cite>This text is wrapped with the cite tag.</cite></p>
+
+		<h2>Definition</h2>
+		<p>The <dfn title="Used to create a definition for text.">dfn</dfn> tag and title attribute provide a definition for text.</p>
+
+		<h2>Abbreviation</h2>
+		<p>The <abbr title="abbriviation">abbr</abbr> tag and title attribute are used to identify abbreviations.</p>
+
+		<h2>Time</h2>
+		<p><time datetime="1993-02-2">2 February 1993</time></p>
+
+		<h2>Variable</h2>
+		<p>The <var>var</var> tag is used to identify a <var>variable</var>.</p>
+
+		<h2>Sample Output</h2>
+		<p>Use the <samp>samp tag</samp> to wrap sample output content.</p>
+
+		<h2>Keyboard Entry</h2>
+		<p>The kbd tag identifies keyboard buttons, such as <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>DEL</kbd></p>
+
+		<h2>Superscript and Subscript</h2>
+		<p>Superscript (<sup>n</sup>) and subscript (<sub>n</sub>) for math equations, f(<var>x</var>, <var>n</var>) = log<sub>4</sub><var>x</var><sup><var>n</var></sup></p>
+
+		<h2>Del and Ins Tags</h2>
+		<p>Use the <del datetime="2001-07-30T13:00:00">delete</del> <ins datetime="2001-07-30T13:00:00">del</ins> and <del datetime="2001-07-30T13:00:00">insert</del> <ins datetime="2001-07-30T13:00:00">ins</ins> tag and datetime attribute to leave edited text intact.</p>
+
+		<h2>Address</h2>
+		<address>
+			1234 Main Street<br />
+			Austin, TX 78704
+		</address>
+
+		<h2>Horizontal Rule</h2>
+		<hr />
+
+		<h2>Tables</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Heading 1</th>
+					<th>Heading 2</th>
+					<th>Heading 3</th>
+					<th>Heading 4</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+				<tr>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+					<td>Lorem ipsum</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<h2>Ordered List</h2>
+		<ol>
+			<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+			<li>Aliquam tincidunt mauris eu risus.</li>
+			<li>Vestibulum auctor dapibus neque.
+				<ol>
+					<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+					<li>Aliquam tincidunt mauris eu risus.</li>
+					<li>Vestibulum auctor dapibus neque.</li>
+				</ol>
+			</li>
+			<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+		</ol>
+
+		<h2>Unordered List</h2>
+		<ul>
+			<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+			<li>Aliquam tincidunt mauris eu risus.</li>
+			<li>Vestibulum auctor dapibus neque.
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+					<li>Aliquam tincidunt mauris eu risus.</li>
+					<li>Vestibulum auctor dapibus neque.</li>
+				</ul>
+			</li>
+			<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+		</ul>
+
+		<h2>Definition List</h2>
+		<dl>
+			<dt>Definition list</dt>
+			<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+			aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+			commodo consequat.</dd>
+			<dt>Lorem ipsum dolor sit amet</dt>
+			<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+			aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+			commodo consequat.</dd>
+		</dl>
+	</body>
+</html>

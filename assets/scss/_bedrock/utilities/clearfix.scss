@@ -1,0 +1,45 @@
+//==========
+// Clear Fixes
+//==========
+
+// Used after floated elements.
+@mixin clear {
+	clear: both;
+}
+
+// Used on the last floated element.
+@mixin clear-after {
+	
+	&:after {
+		clear: both;
+		content: " ";
+	}
+}
+
+// Used on the floated elements container.
+@mixin clear-fix {
+	
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		content: " ";
+	}
+}
+
+
+//==========
+// Placeholders
+//==========
+%clear {
+	@include clear;
+}
+%clear-after {
+	@include clear-after;
+}
+%clear-fix {
+	@include clear-fix;
+}

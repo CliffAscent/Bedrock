@@ -1,0 +1,16 @@
+{
+	"name":    "Bedrock",
+	"version": "0.8.0",
+	"dependencies": {
+		"almond":                  "latest",
+		"html5shiv":               "latest",
+		"jquery":                  "latest",
+		"matchmedia":              "latest",
+		"modernizr":               "latest",
+		"requirejs":               "latest",
+		"requirejs-domready":      "latest",
+		"requirejs-plugins":       "latest",
+		"underscore":              "latest",
+		"webfontloader-min":       "latest"
+	}
+}

@@ -1,0 +1,128 @@
+//==========
+// Tag Semantics
+//==========
+p {
+	display: block;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover,
+a:active {
+	outline: 0;
+	text-decoration: none;
+}
+a:focus {
+	outline: thin dotted;
+}
+
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+small {
+	font-size: 0.8em;
+}
+
+kbd,
+var,
+samp,
+code,
+sup,
+sub {
+	font-family: "Courier New", Courier, monospace;
+}
+code {
+	display: block;
+	font-size: 0.8em;
+	padding: 0.5em;
+	overflow: auto;
+	max-width: 100%;
+}
+sup,
+sub {
+	font-size: 0.8em;
+	font-style: italic;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.5em;
+}
+
+dfn,
+abbr,
+acronym {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+del {
+	text-decoration: line-through;
+}
+ins {
+	border-bottom: 1px dashed;
+	text-decoration: none;
+}
+
+q {
+	font-style: italic;
+	
+	&:before,
+	&:after {
+		content: '"';
+	}
+}
+blockquote {
+	display: block;
+	font-style: italic;
+	font-weight: normal;
+	padding: 1em;
+	
+	&:before,
+	&:after {
+		content: '"';
+	}
+	p {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	em,
+	cite {
+		font-style: normal;
+	}
+	&.right {
+		text-align: right;
+	}
+}
+
+cite {
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+address {
+	display: block;
+	margin-left: 1rem;
+	padding: 0.5em;
+}
+
+mark {
+	background: #FFFF00;
+	color: #000000;
+	padding: 0 0.25em;
+}
+
+hr {
+	background: #808080;
+	border: 0;
+	height: 1px;
+	margin: 0.5rem 0;
+}

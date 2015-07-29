@@ -1,0 +1,7 @@
+//==========
+// Responsive Tables
+//==========
+
+.table {
+	@include table(medium);
+}

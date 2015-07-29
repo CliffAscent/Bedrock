@@ -1,0 +1,39 @@
+//==========
+// Vertical Menu
+//==========
+
+@mixin vertical-menu($subs: false) {
+	margin: 0;
+	
+	@if $subs {
+		.no-js & li:hover > ul,
+		.hover-enabled & li:hover > ul {
+			display: block;
+		}
+	}
+
+	li {
+		position: relative;
+		
+		a {
+			display: inline-block;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+	}
+		ul {
+			display: none;
+			list-style-type: none;
+			margin: 0;
+		
+			li {
+				float: none;
+				margin: 0;
+				position: relative;
+
+				a {
+					
+				}
+			}
+		}
+}

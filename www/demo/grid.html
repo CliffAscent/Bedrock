@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grid System</title>
+		<link href="../assets/css/sample-app.css" rel="stylesheet" />
+		<script data-main="../assets/js/sample-app" src="../assets/js/require.js"></script>
+	</head>
+	<body>
+		<h3>Grid System</h3>
+		<div class="row">
+			<div class="column xsmall-12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-6">
+				xsmall-6
+			</div>
+			<div class="column xsmall-6">
+				xsmall-6
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+		</div>
+		
+		<h3>Responsive Grid</h3>
+		<div class="row">
+			<div class="column xsmall-12 large-6">
+				xsmall-12 large-6
+			</div>
+			<div class="column xsmall-12 large-6">
+				xsmall-12 large-6
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-12 medium-6 large-3">
+				xsmall-12 medium-6 large-3
+			</div>
+			<div class="column xsmall-12 medium-6 large-3">
+				xsmall-12 medium-6 large-3
+			</div>
+			<div class="column xsmall-12 medium-6 large-3">
+				xsmall-12 medium-6 large-3
+			</div>
+			<div class="column xsmall-12 medium-6 large-3">
+				xsmall-12 medium-6 large-3
+			</div>
+		</div>
+		
+		<h3>Nested Grid</h3>
+		<div class="row">
+			<div class="column xsmall-7">
+				xsmall-7
+				<div class="row">
+					<div class="column xsmall-12 large-4">
+						xsmall-12 large-4
+					</div>
+					<div class="column xsmall-12 large-8">
+						xsmall-12 large-8
+					</div>
+				</div>
+			</div>
+			<div class="column xsmall-5">
+				xsmall-5
+				<div class="row">
+					<div class="column xsmall-12 large-6">
+						xsmall-12 large-6
+					</div>
+					<div class="column xsmall-12 large-6">
+						xsmall-12 large-6
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<h3>Offset Columns</h3>
+		<div class="row">
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+			<div class="column xsmall-8">
+				xsmall-8
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+			<div class="column xsmall-7 offset-1">
+				xsmall-7 offset-1
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-8 offset-2">
+				xsmall-8 offset-2
+			</div>
+		</div>
+		
+		<h3>Centered Columns</h3>
+		<div class="row">
+			<div class="column xsmall-8 xsmall-center large-uncenter">
+				xsmall-center large-uncenter
+			</div>
+		</div>
+		
+		<h3>Last Column</h3>
+		<div class="row">
+			<div class="column xsmall-4">
+				xsmall-4
+			</div>
+			<div class="column xsmall-4 last">
+				xsmall-4 last
+			</div>
+		</div>
+		
+		<h3>Column Ordering</h3>
+		<div class="row">
+			<div class="column xsmall-12 medium-8 medium-push-4">
+				1st in DOM
+			</div>
+			<div class="column xsmall-12 medium-4 medium-pull-8">
+				2nd in DOM
+			</div>
+		</div>
+		<div class="row">
+			<div class="column xsmall-12 large-6 large-push-3">
+				1st in DOM
+			</div>
+			<div class="column xsmall-6 large-3 large-push-3">
+				2nd in DOM
+			</div>
+			<div class="column xsmall-6 large-3 large-pull-9">
+				3rd in DOM
+			</div>
+		</div>
+	</body>
+</html>

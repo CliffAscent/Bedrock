@@ -1,0 +1,220 @@
+//==========
+// Bedrock Grid System
+//
+// This component will generate the necessary placeholders to create a semantic grid.
+//==========
+
+
+//==========
+// Grid Row
+//
+// Generate the properties for a grid row.
+//
+// The $type argument accepts the following values;
+//   nest: nested row
+//   collapse: no outter gutters
+//   nest-collapse: nested row with no outter gutters
+//   false (default): normal container row
+//==========
+@mixin grid-row($type: false) {
+	@if $type == nest {
+		margin-left: ($gutter-width / -2);
+		margin-right: ($gutter-width / -2);
+		width: auto;
+	}
+
+	@elseif $type == collapse {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	@elseif $type == nest-collapse {
+		margin-left: 0;
+		margin-right: 0;
+		width: auto;
+	}
+
+	@else {
+		@extend %clear-fix;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+		width: 100%;
+	}
+}
+
+
+//==========
+// Grid Column
+//
+// Generate the properties for a grid column.
+//
+// Accepts the following arguments;
+//   $center: align the column in the center of the row
+//   $collapse: remove the column gutters
+//   $gutter: the size of the column gutters
+//   $last: float the last column right
+//   $uncenter: align the column to the left
+//==========
+@mixin grid-column(
+	$center:   false,
+	$collapse: false,
+	$gutter:   $gutter-width,
+	$last:     false,
+	$uncenter: false
+) {
+	@if $center {
+		float: none !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@elseif $uncenter {
+		float :left !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	@elseif $last {
+		float: right;
+	}
+	@elseif $collapse == false {
+		float: left;
+	}
+	
+	@if $collapse {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@elseif $center == false and $uncenter == false and $last == false {
+		padding-left: $gutter / 2;
+		padding-right: $gutter / 2;
+	}
+}
+
+// Column width, requires the $span argument.
+@mixin column-span($span, $columns:  $column-count) {
+	width: percentage($span / $columns);
+}
+
+// Column offset, requires the $offset argument.
+@mixin column-offset($offset, $columns:  $column-count) {
+	margin-left: percentage($offset / $columns) !important;
+}
+
+// Column push, requires the $push argument.
+@mixin column-push($push, $columns:  $column-count) {
+	left: percentage($push / $columns);
+	position: relative;
+	right: auto;
+}
+
+// Column pull, requires the $pull argument.
+@mixin column-pull($pull, $columns: $column-count) {
+	left: auto;
+	position: relative;
+	right: percentage($pull / $columns);
+}
+
+
+//==========
+// Row Placeholders
+//==========
+%row {
+	@include grid-row;
+}
+%row-nest {
+	@include grid-row(nest);
+}
+%row-collapse {
+	@include grid-row(collapse);
+}
+%row-nest-collapse {
+	@include grid-row(nest-collapse);
+}
+
+
+//==========
+// Column Placeholders
+//==========
+%column {
+	@include grid-column;
+}
+%column-collapse {
+	@include grid-column($collapse: true);
+}
+%column-last {
+	@include grid-column($last: true);
+}
+
+// xsmall columns
+@media #{$xsmall-up} {
+	%column-center,
+	%xsmall-center {
+		@include grid-column($center: true);
+	}
+	%column-uncenter,
+	%xsmall-uncenter {
+		@include grid-column($uncenter: true);
+	}
+	@for $i from 1 through $column-count {
+		%column-#{$i},
+		%xsmall-#{$i} {
+			@include column-span($span: $i);
+		}
+	}
+	@for $i from 1 through ($column-count - 1) {
+		%offset-#{$i},
+		%column-offset-#{$i},
+		%xsmall-offset-#{$i} {
+			@include column-offset($offset: $i);
+		}
+	}
+	@for $i from 1 through ($column-count - 1) {
+		%pull-#{$i},
+		%column-pull-#{$i},
+		%xsmall-pull-#{$i} {
+			@include column-pull($pull: $i);
+		}
+	}
+	@for $i from 1 through ($column-count - 1) {
+		%push-#{$i},
+		%column-push-#{$i},
+		%xsmall-push-#{$i} {
+			@include column-push($push: $i);
+		}
+	}
+}
+
+// small and up columns
+@each $size in $breakpoints {
+	@if $size != xsmall {
+		@include break($size) {
+			%#{$size}-center {
+				@include grid-column($center: true);
+			}
+			%#{$size}-uncenter {
+				@include grid-column($uncenter: true);
+			}
+			@for $i from 1 through $column-count {
+				%#{$size}-#{$i} {
+					@include column-span($span: $i);
+				}
+			}
+			@for $i from 1 through ($column-count - 1) {
+				%#{$size}-offset-#{$i} {
+					@include column-offset($offset: $i);
+				}
+			}
+			@for $i from 1 through ($column-count - 1) {
+				%#{$size}-pull-#{$i} {
+					@include column-pull($pull: $i);
+				}
+			}
+			@for $i from 1 through ($column-count - 1) {
+				%#{$size}-push-#{$i} {
+					@include column-push($push: $i);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,78 @@
+//==========
+// Breakpoints
+//==========
+
+@mixin break($point, $only: false) {
+	@if $point == xsmall {
+		@if $only {
+			@media #{$xsmall-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$xsmall-up} {
+				@content;
+			}
+		}
+	}
+	@elseif $point == small {
+		@if $only {
+			@media #{$small-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$small-up} {
+				@content;
+			}
+		}
+	}
+	@elseif $point == medium {
+		@if $only {
+			@media #{$medium-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$medium-up} {
+				@content;
+			}
+		}
+	}
+	@elseif $point == large {
+		@if $only {
+			@media #{$large-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$large-up} {
+				@content;
+			}
+		}
+	}
+	@elseif $point == xlarge {
+		@if $only {
+			@media #{$xlarge-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$xlarge-up} {
+				@content;
+			}
+		}
+	}
+	@elseif $point == full {
+		@if $only {
+			@media #{$full-only} {
+				@content;
+			}
+		}
+		@else {
+			@media #{$full-up} {
+				@content;
+			}
+		}
+	}
+}

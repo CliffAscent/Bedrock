@@ -1,0 +1,116 @@
+//==========
+// Bedrock Functions
+//==========
+
+
+//==========
+// Converts a list into a string.
+//
+// @param {array} $list - The array to turn into a string.
+// @param {string} [$separator=','] - The separator to add between array segments.
+// @param {boolean} [$is-nested=false] - Is $list a nested array.
+//==========
+@function to-string($list, $separator: ',', $is-nested: false) {
+  $result: null;
+
+  @for $i from 1 through length($list) {
+    $e: nth($list, $i);
+
+    @if type-of($e) == list {
+      $result: $result#{to-string($e, $separator, true)};
+    }
+    
+    @else {
+      $result: if($i != length($list) or $is-nested, $result#{$e}#{$separator}, $result#{$e});
+    }
+  }
+
+  @return $result;
+}
+
+
+
+//==========
+// Add a data attribute with the defined namespace.
+//
+// @param {string} $attr - The data attribute.
+//==========
+@function data($attr) {
+	@if $namespace {
+		@return '[data-' + $namespace + '-' + $attr + ']';
+	}
+
+	@return '[data-' + $attr + ']';
+}
+
+
+//==========
+// Return the lower value in a range.
+//
+// @param {string} $range - The range to query.
+//==========
+@function lower-bound($range){
+	@if length($range) <= 0 {
+		@return 0;
+	}
+	@return nth($range,1);
+}
+
+
+//==========
+// Return the upper value in a range.
+//
+// @param {string} $range - The range to query.
+//==========
+@function upper-bound($range) {
+	@if length($range) < 2 {
+		@return 999999999999;
+	}
+	@return nth($range, 2);
+}
+
+
+//==========
+// Strip the measurement unit and return the value.
+//
+// @param {string} $string - The measure unit to extract the value out of.
+//==========
+@function strip-unit($string) {
+	@return $string / ($string * 0 + 1);
+}
+
+
+//==========
+// Convert a measurement into rem's.
+//
+// @param {string} $value - The value to convert.
+// @param {string} [$base-value=$rem-base] - The base measurement for a rem.
+//==========
+@function convert-to-rem($value, $base-value: $rem-base)  {
+	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
+	@if ($value == 0rem) { $value: 0; }
+	@return $value;
+}
+
+
+//==========
+// Calculate a measurement in rem's.
+//
+// @param {string|array} $values - The value to convert to rems.
+// 	Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported: rem-calc(10 20 30px 40);
+// 	To delimit using comma's, wrap it in another pair of brackets rem-calc((10, 20, 30, 40px));
+// @param {string} [$base-value=$rem-base] - The base measurement for a rem.
+//==========
+@function rem-calc($values, $base-value: $rem-base) {
+	$max: length($values);
+
+	@if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+	$remValues: ();
+	
+	@for $i from 1 through $max {
+		$remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+	}
+	
+	@return $remValues;
+}

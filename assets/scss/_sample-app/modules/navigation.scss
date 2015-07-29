@@ -1,0 +1,11 @@
+//==========
+// Navigation Menu
+//
+// This styles component will generate the classes for a traditional navigation menu.
+// This styles components should only be used for testing and prototyping.
+// You should use @extend as necessary to create semantic navigation menus.
+//==========
+
+.navigation {
+	@include navigation;
+}

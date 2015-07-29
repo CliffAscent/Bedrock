@@ -1,0 +1,46 @@
+//==========
+// Bedrock Settings
+//
+// Uncomment a setting to customize it as needed.
+// The current values are the defaults used by the bedrock.
+// Do not remove this file, it's pulled in by the bedrock core.
+//==========
+
+
+//==========
+// General
+//==========
+
+// Toggle to output CSS that resets the browser styles.
+// $reset_enabled: true;
+
+// Custom namespace used for JavaScript meta data.
+// $namespace: "bedrock";
+
+// HTML and body font-size. Serves as a base measurement for rem's.
+// $rem-base: 16px;
+
+// Max width of the main section of the layout.
+// $max-width: rem-calc(1200px);
+
+
+//==========
+// Grid System
+//==========
+
+// Default number of columns to use in a grid.
+// $column-count: 12;
+
+// Size of the gutters between grid columns.
+// $gutter-width: 1rem;
+
+
+//==========
+// Breakpoints
+//==========
+// $xsmall-range: (0px,   300px)  !default;
+// $small-range:  (300px,  600px)  !default;
+// $medium-range: (600px,  900px)  !default;
+// $large-range:  (900px,  1200px) !default;
+// $xlarge-range: (1200px, 1500px) !default;
+// $full-range:   (1500px, 9999999999999px) !default;

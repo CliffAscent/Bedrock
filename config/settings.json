@@ -1,0 +1,14 @@
+{
+	"bower_dir":          "assets/vendor",
+	"copy_files":          [],
+	"copy_files_dest":     "www",
+	"css_path":            "www/assets/css",
+	"env":                 "dev",
+	"js_copy_dirs":        [],
+	"js_path":             "www/assets/js",
+	"js_source_path":      "assets/js",
+	"jshint_enabled":      true,
+	"less_path":           "assets/less",
+	"scss_path":           "assets/scss",
+	"tasks_dirs":          ["tasks"]
+}
