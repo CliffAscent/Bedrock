@@ -1,5 +1,5 @@
 /**
-*	@file The main Gruntfile that manages the Bedrock tasks.
+* @file The main Gruntfile that manages the Bedrock tasks.
 * @author Patrick Clifford
 */
 
@@ -42,15 +42,15 @@ module.exports = function(grunt) {
 		/**
 		* Assign the settings based on the following priority;
 		*
-		* grunt option (command line example: grunt css --env=live) >
-		* 	custom setting declared in config/settings.json >
-		* 	the default setting declared above
+		* grunt option, example: grunt watch --env=live
+		* 	custom setting declared in config/env/[env setting].json
+		* 	custom setting declared in config/settings.json
+		* 	the default setting
 		*/
+
+		// Overwrite the defaults from settings.json
 		for (var item in defaults) {
-			if (grunt.option(item)) {
-				settings[item] = grunt.option(item);
-			}
-			else if (custom.hasOwnProperty(item)) {
+			if (custom.hasOwnProperty(item)) {
 				settings[item] = custom[item];
 			}
 			else {
@@ -58,15 +58,29 @@ module.exports = function(grunt) {
 			}
 		}
 
-		// Pull in the proper environment settings.
-		env = grunt.file.readJSON('config/env/' + settings.env + '.json');
+		// Check for a grunt environment setting.
+		if (grunt.option('env')) {
+			settings['env'] = grunt.option('env');
+		}
 
-		// Assign the environment settings to the settings object.
-		for (item in env) {
-			settings[item] = env[item];
+		// Pull in the proper environment settings.
+		if (env = grunt.file.readJSON('config/env/' + settings.env + '.json')) {
+			for (var item in env) {
+				settings[item] = env[item];
+			}
+		}
+
+		// Pull in the grunt settings.
+		for (var item in defaults) {
+			if (grunt.option(item)) {
+				settings[item] = grunt.option(item);
+			}
 		}
 		
-		// Build an array of paths to compile JavaScript using uglify instead of requirejs.
+		
+		/**
+		*	Build an array of paths to compile JavaScript using uglify instead of requirejs.
+		*/
 		settings.non_amd_paths = [];
 		if (typeof settings.js_copy_dirs === 'string') {
 			if (settings.js_copy_dirs === '') {
@@ -110,7 +124,7 @@ module.exports = function(grunt) {
 
 		
 		/**
-		*	Download the dependencies declared in bower.json
+		* Download the dependencies declared in bower.json
 		*/
 		bower: {
 			install: {
@@ -124,7 +138,7 @@ module.exports = function(grunt) {
 		
 		
 		/**
-		*	Copy files without modification.
+		* Copy files without modification.
 		*/
 		copy: {
 			files: {
@@ -156,7 +170,7 @@ module.exports = function(grunt) {
 
 
 		/**
-		*	Run all JavaScript through the jshint validator.
+		* Run all JavaScript through the jshint validator.
 		*/
 		jshint: {
 			grunt: ['bower.json', 'Gruntfile.js', 'package.json', 'config/**/*.json'],

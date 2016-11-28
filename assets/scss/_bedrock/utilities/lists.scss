@@ -2,7 +2,7 @@
 // List Utilities
 //==========
 @mixin list-inline($li: li) {
-	@extend %clear-fix;
+	@include clear-fix;
 	list-style-type: none;
 	
 	& > #{$li} {

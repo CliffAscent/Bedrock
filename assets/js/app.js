@@ -1,5 +1,5 @@
 /**
-*	@file The sample application script that will be compiled and output.
+* @file The application script that will be compiled and output.
 * @author Patrick Clifford
 */
 

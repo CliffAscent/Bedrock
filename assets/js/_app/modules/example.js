@@ -1,5 +1,5 @@
 /**
-*	@file A sample module.
+* @file A sample module.
 * @author Patrick Clifford
 */
 

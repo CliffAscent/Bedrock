@@ -1,5 +1,5 @@
 /**
-*	@file The requirejs compiler settings.
+* @file The requirejs compiler settings.
 * @author Patrick Clifford
 *
 * A full list of settings can be found at https://github.com/jrburke/r.js/blob/master/build/example.build.js

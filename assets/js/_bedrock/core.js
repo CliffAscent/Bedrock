@@ -1,5 +1,5 @@
 /**
-*	@file The core of the Bedrock application.
+* @file The core of the Bedrock application.
 * @author Patrick Clifford
 */
 

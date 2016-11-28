@@ -1,5 +1,5 @@
 /**
-*	@file The Bedrock navigation module.
+* @file The Bedrock navigation module.
 * @author Patrick Clifford
 */
 
@@ -50,7 +50,7 @@ define(['jquery'], function($) {
 			
 
 				/**
-				*	Add openClass to the nav if the menu is visible.
+				* Add openClass to the nav if the menu is visible.
 				*/
 				if ($menu.is(':visible')) {
 					$nav.addClass(config.openClass);
@@ -58,7 +58,7 @@ define(['jquery'], function($) {
 
 
 				/**
-				*	Add hasSubClass to all <li> with a <ul> child.
+				* Add hasSubClass to all <li> with a <ul> child.
 				*/
 				$menu.find('li > ul').each(function(index, value) {
 					$.fn.navigation.hasSubmenu(this, config);
@@ -66,7 +66,7 @@ define(['jquery'], function($) {
 
 
 				/**
-				*	Reset the menus when the window resizes.
+				* Reset the menus when the window resizes.
 				*/
 				$(window).resize(function(e) {
 					$.fn.navigation.reset($nav, config);
@@ -74,7 +74,7 @@ define(['jquery'], function($) {
 
 
 				/**
-				*	Toggle the navigation menu.
+				* Toggle the navigation menu.
 				*/
 				$nav.children('.' + config.controlClass).on('click', function(e) {
 					e.preventDefault();
@@ -85,7 +85,7 @@ define(['jquery'], function($) {
 
 
 				/**
-				*	Toggle submenus.
+				* Toggle submenus.
 				*/
 				$menu.find(config.activateSubmenu).on('click', function(e) {
 					var $subMenu = '';
@@ -121,7 +121,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Expose the default options to be overwritten jQuery style.
+		* Expose the default options to be overwritten jQuery style.
 		*/
 		$.fn.navigation.options = {
 			activateSubmenu: 'li',
@@ -135,7 +135,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Animate showing or hiding an element.
+		* Animate showing or hiding an element.
 		*
 		* @param {object|string} element - The collection or selector of the element to open.
 		* @param {object|string} visibility - The visibility to animate, show or hide.
@@ -185,7 +185,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Add the config.hasSubClass class to the parent <li> of a submenu.
+		* Add the config.hasSubClass class to the parent <li> of a submenu.
 		*
 		* @param {object|string} element - The collection or selector of the element to identify.
 		* @param {object} [config=$.fn.navigation.options] - The config object.
@@ -198,7 +198,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Open a submenu.
+		* Open a submenu.
 		*
 		* @param {object|string} element - The collection or selector of the element to open.
 		* @param {object} [config=$.fn.navigation.options] - The config object.
@@ -217,7 +217,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Reset all submenus.
+		* Reset all submenus.
 		*
 		* @param {object|string} element - The collection or selector of the navigation to reset.
 		* @param {object} [config=$.fn.navigation.options] - The config object.
@@ -233,7 +233,7 @@ define(['jquery'], function($) {
 
 
 		/**
-		*	Toggle a menu open or close. Will also close all children <ul>.
+		* Toggle a menu open or close. Will also close all children <ul>.
 		*
 		* @param {object|string} element - The collection or selector of the element to toggle.
 		* @param {object} [config=$.fn.navigation.options] - The config object.
