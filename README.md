@@ -1,6 +1,8 @@
 
 # Bedrock
 
+**Development of this project has discontinued in favor of other open source projects, but remains on GitHub for demonstration purposes.**
+
 Bedrock is the unification of advanced front-end development tools forming a comprehensive and flexible front-end framework. The goal is to provide a thorough and light-weight starting point for any front-end project that eliminates the need for repetitive tasks, while being design-agnostic, and helps maintain best-practices.
 
 The framework can either be updated independent of your application or be forked and modified to fit any work-flow. Bedrock does require advanced knowledge and techniques to be fully utilized, as to not sacrifice it's goal, but is still designed to be as user-friendly as possible.
